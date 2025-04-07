@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            display: flex;
+            height: 60px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--color1), #5679C5, #d98cff);
+            color: white;
+            position: relative;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .nav-icon {
+            position: relative;
+            display: inline-block;
+            margin: 0 9px;
+            text-align: center;
+        }
+        
+        .nav-icon img {
+            width: 27px;
+            height: 27px;
+            transition: transform 0.3s;
+        }
+        
+        .nav-icon:hover img {
+            transform: scale(1.1);
+        }
+        
+        .label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: "Work Sans", sans-serif;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 10;
+        }
+        
+        .nav-icon:hover .label {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-3px);
+        }
+        
+        .nav-links {
+            margin: 0 9px;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: var(--color1);
+                width: 200px;
+                text-align: center;
+                padding: 10px 0;
+                gap: 10px;
+                z-index: 1000;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                right: 10px;
+                top: 20px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0d2f5;
+        }
+        
+        .menu {
+            width: 60%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 8px;
+            color: var(--color1);
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: #f6688e;
+            transition: color 0.3s;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+        
+        .menu a:hover {
+            color: var(--color7);
+            transform: scale(1.05);
+        }
+        
+        a {
+            text-emphasis: none;
+            text-decoration: none;
+            color: var(--color1);
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            background-color: #d3bdf7;
+            display: none;
+            overflow-y: auto;
+            z-index: 1000;
+            padding: 10px;
+            text-align: center;
+            font-family: "Gloria Hallelujah", cursive;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 992px) {
+            .menu {
+                width: 100%;
+            }
+            .menu a {
+                font-size: 14px;
+            }
+            .dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 15px;
+            }
+            .dropdown h2 {
+                font-size: 28px;
+            }
+            .dropdown a {
+                font-size: 16px;
+            }
+            .columns {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu {
+                width: 100%;
+            }
+            .dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 12px;
+            }
+            .dropdown h2 {
+                font-size: 24px;
+            }
+            .dropdown a {
+                font-size: 14px;
+            }
+            .columns {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .menu {
+                width: 100%;
+                gap: 15px;
+            }
+            .dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 5px !important;
+                margin: 0 !important;
+                overflow-x: hidden;
+            }
+            .dropdown a {
+                font-size: 10px !important;
+            }
+            .dropdown h2 {
+                font-size: 17px !important;
+            }
+            .columns {
+                display: flex;
+                flex-direction: column;
+                gap: 5px !important;
+                width: 100%;
+                align-items: center;
+                margin: 5px !important;
+                padding: 0 !important;
+            }
+        }
+        
+        .dropdown h2 {
+            font-family: "Gloria Hallelujah", cursive;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 35px;
+            color: var(--color7);
+            margin-bottom: 1%;
+        }
+        
+        .columns {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 150px;
+            padding: 0 10px;
+        }
+        
+        .dropdown a {
+            margin: 10px 0;
+            line-height: 2;
+            color: var(--color1);
+            font-size: 20px;
+            font-weight: 450;
+            font-family: "Work Sans", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .dropdown a:hover {
+            color: var(--color7);
+        }
+        
+        .dropdown.active {
+            display: block;
+        }
+        
+        .btn-close1 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color7);
+            transition: transform 0.3s;
+        }
+        
+        .btn-close1:hover {
+            transform: scale(1.1);
+        }
+        
+        .card-title-product {
+            font-size: 18px;
+            color: var(--color1);
+            padding: 10px 14px;
+            margin: 0;
+            text-transform: capitalize;
+        }
+        
+        .card-text-product {
+            font-size: 14px;
+            color: rgb(56, 56, 56);
+            margin: 0;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="assets/images/favicon.png" alt="Simplon" onclick="window.location.href = 'index.html'"></div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-icon">
+                    <img src="assets/images/home.png" alt="">
+                    <span class="label">Home</span>
+                </a>
+                <a href="contactus.html" class="nav-icon">
+                    <img src="assets/images/contact.png" alt="">
+                    <span class="label">Contact</span>
+                </a>
+                <a href="aboutus.html" class="nav-icon">
+                    <img src="assets/images/aboutus.png" alt="">
+                    <span class="label">About</span>
+                </a>
+                <a href="gallery.html" class="nav-icon">
+                    <img src="assets/images/gallery.png" alt="">
+                    <span class="label">Gallery</span>
+                </a>
+                <a href="index.html" class="nav-icon">
+                    <img src="assets/images/cart.png" alt="">
+                    <span class="label">Cart</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="menu-container">
+        <div class="menu">
+            <a href="#" onclick="toggleDropdown('makeup')">MakeUp</a>
+            <a href="hairs.html">Hair</a>
+            <a href="skincare.html">SkinCare</a>
+            <a href="jewellery.html">Jewellery</a>
+            <a href="#" onclick="toggleDropdown('nail')">Nail</a>
+            <a href="weddingkits.html">Kits</a>
+        </div>
+    </div>
+
+    <div class="dropdown" id="makeup">
+        <div class="background"></div>
+        <button type="button" class="btn-close1" onclick="toggleDropdown('makeup')">✖</button>
+        <h2>Makeup</h2>
+        <div class="columns">
+            <div class="column">
+                <a href="complexion.html">Face</a>
+                <a href="eyemakeup.html">Eyes</a>
+                <a href="lips.html">Lips</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown" id="nail">
+        <button type="button" class="btn-close1" onclick="toggleDropdown('nail')">✖</button>
+        <h2>Nails</h2>
+        <div class="columns">
+            <div class="column">
+                <a href="nails.html">Nail Paints</a>
+                <a href="nailsart.html">Nail Art</a>
+            </div>
+        </div>
+    </div>
+
+</html>

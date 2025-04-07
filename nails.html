@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="icon" href="assets/images/favicon.png" type="image/jpg">
+    <style>
+        /* body {
+            background-color: #adbbda;
+        } */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+         :root {
+            --color1: #3D52A0;
+            --color2: #7091E6;
+            --color3: #8697C4;
+            --color4: #ADBBDA;
+            --color5: #EDE8F5;
+            --color6: #e6b7a2;
+            --color7: rgb(227, 34, 98);
+            --color8: rgb(161, 29, 73);
+            --yellow-accent: #F2C849;
+            --blue-accent: #5679C5;
+            --pink-accent: #E6A5C4;
+        }
+        
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            background-color: white;
+            color: var(--color1);
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        body::-webkit-scrollbar-thumb {
+            background-color: #c6a7f4;
+            border-radius: 5px;
+        }
+        
+        body::-webkit-scrollbar-track {
+            background: #fcd0d0;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: "Gloria Hallelujah", cursive;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 48px;
+            color: #30427b;
+            margin-bottom: 3%;
+        }
+        
+        h1:hover {
+            animation: bounce 0.6s;
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        header {
+            display: flex;
+            height: 60px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--color1), #5679C5, #d98cff);
+            color: white;
+            position: relative;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .nav-icon {
+            position: relative;
+            display: inline-block;
+            margin: 0 9px;
+            text-align: center;
+        }
+        
+        .nav-icon img {
+            width: 27px;
+            height: 27px;
+            transition: transform 0.3s;
+        }
+        
+        .nav-icon:hover img {
+            transform: scale(1.1);
+        }
+        
+        .label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: "Work Sans", sans-serif;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 10;
+        }
+        
+        .nav-icon:hover .label {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-3px);
+        }
+        
+        .nav-links {
+            margin: 0 9px;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: var(--color1);
+                width: 200px;
+                text-align: center;
+                padding: 10px 0;
+                gap: 10px;
+                z-index: 1000;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                right: 10px;
+                top: 20px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0d2f5;
+        }
+        
+        .menu {
+            width: 60%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 8px;
+            color: var(--color1);
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: #f6688e;
+            transition: color 0.3s;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+        
+        .menu a:hover {
+            color: var(--color7);
+            transform: scale(1.05);
+        }
+        
+        a {
+            text-emphasis: none;
+            text-decoration: none;
+            color: var(--color1);
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            background-color: #d3bdf7;
+            display: none;
+            overflow-y: auto;
+            z-index: 1000;
+            padding: 10px;
+            text-align: center;
+            font-family: "Gloria Hallelujah", cursive;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 992px) {
+            .menu {
+                width: 100%;
+            }
+            .menu a {
+                font-size: 14px;
+            }
+            .dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 15px;
+            }
+            .dropdown h2 {
+                font-size: 28px;
+            }
+            .dropdown a {
+                font-size: 16px;
+            }
+            .columns {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu {
+                width: 100%;
+            }
+            .dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 12px;
+            }
+            .dropdown h2 {
+                font-size: 24px;
+            }
+            .dropdown a {
+                font-size: 14px;
+            }
+            .columns {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .menu {
+                width: 100%;
+                gap: 15px;
+            }
+            .dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 5px !important;
+                margin: 0 !important;
+                overflow-x: hidden;
+            }
+            .dropdown a {
+                font-size: 10px !important;
+            }
+            .dropdown h2 {
+                font-size: 17px !important;
+            }
+            .columns {
+                display: flex;
+                flex-direction: column;
+                gap: 5px !important;
+                width: 100%;
+                align-items: center;
+                margin: 5px !important;
+                padding: 0 !important;
+            }
+        }
+        
+        .dropdown h2 {
+            font-family: "Gloria Hallelujah", cursive;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 35px;
+            color: var(--color7);
+            margin-bottom: 1%;
+        }
+        
+        .columns {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 150px;
+            padding: 0 10px;
+        }
+        
+        .dropdown a {
+            margin: 10px 0;
+            line-height: 2;
+            color: var(--color1);
+            font-size: 20px;
+            font-weight: 450;
+            font-family: "Work Sans", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .dropdown a:hover {
+            color: var(--color7);
+        }
+        
+        .dropdown.active {
+            display: block;
+        }
+        
+        .btn-close1 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color7);
+            transition: transform 0.3s;
+        }
+        
+        .btn-close1:hover {
+            transform: scale(1.1);
+        }
+        
+        .header-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .header-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .page-top {
+            width: 100%;
+            position: relative;
+        }
+        
+        .page-top img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            margin-bottom: 30px;
+        }
+        
+        .top-para {
+            font-size: 14px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 23px;
+            /* margin-bottom: 50px; */
+        }
+        
+        .filter-icons-container {
+            padding-top: 80px;
+        }
+        
+        #eContainer {
+            margin-bottom: 15px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .card-img-top {
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #bfcbe5, #f8d1e4, #EDE8F5);
+        }
+        
+        .filter-btn {
+            border: 1px solid #f6cae0;
+        }
+        
+        #products-container {
+            margin-top: 20px;
+        }
+        
+        .card-product {
+            width: 100%;
+            max-width: 280px;
+            min-height: 360px;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            transition: 0.3s ease-in-out;
+        }
+        
+        .card-img-top-product {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        /* Hover effect */
+        
+        .card:hover .card-img-top-product {
+            border-bottom: 3px solid black;
+            padding-bottom: 5px;
+            transition: 0.3s ease-in-out;
+        }
+        
+        .card-title-product {
+            font-size: 18px;
+            color: var(--color1);
+            padding: 10px 14px;
+            margin: 0;
+            text-transform: capitalize;
+        }
+        
+        .card-text-product {
+            font-size: 14px;
+            color: rgb(56, 56, 56);
+            margin: 0;
+            text-transform: capitalize;
+        }
+        
+        .card {
+            /* color: var(--color1); */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(145deg, #e6b7a2, white);
+        }
+        
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(145deg, #E6A5C4, white);
+        }
+        
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+        
+        .btn-add-cart {
+            background-color: white;
+            color: black;
+            border: 1px solid whitesmoke;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            max-width: 150px;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .btn-add-cart:hover {
+            background-color: #f6cae0;
+            transform: scale(1.05);
+        }
+        
+        .add-to-cart-container {
+            display: none;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 300px;
+            height: 100vh;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .slidebar {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            background: linear-gradient(145deg, #E6A5C4, white);
+            margin-left: 20px;
+            padding: 15px;
+            text-align: center;
+            /* background-color: #8697C4; */
+        }
+        
+        .head {
+            background-color: rgb(161, 29, 73);
+            border-radius: 3px;
+            height: 50px;
+            /* padding: 10px; */
+            /* margin-bottom: 20px; */
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .head p {
+            color: white;
+            font-weight: bolder;
+        }
+        
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            padding: 10px 0px;
+            border-top: 1px solid;
+        }
+        
+        .foot h3 {
+            color: rgb(161, 29, 73);
+        }
+        
+        .foot #total {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            color: rgb(161, 29, 73);
+        }
+        
+        .btn-remove {
+            color: white;
+            font-weight: bold;
+            background-color: rgb(161, 29, 73);
+        }
+        
+        .btn-checkout {
+            color: white;
+            font-weight: bold;
+            background-color: rgb(161, 29, 73);
+        }
+        
+        .space-line {
+            border: 1px solid;
+            width: 100%;
+            margin-top: 30px;
+        }
+        
+        .modal-body {
+            font-family: "Segoe UI"
+        }
+        
+        @media (max-width: 768px) {
+            .page-top img {
+                height: 300px;
+            }
+            .card-img-top {
+                width: 70px;
+                height: 70px;
+            }
+            .page-top img {
+                margin-bottom: 20px;
+            }
+            .filter-icons-container {
+                padding-top: 40px;
+            }
+            .filter-cards {
+                margin-bottom: 20px;
+            }
+            .filter-cards {
+                flex: 0 0 100%;
+                max-width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        .footer {
+            background-color: var(--color1);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .footer-section {
+            width: 23%;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 2px solid var(--color7);
+            display: inline-block;
+            padding-bottom: 5px;
+            color: white;
+        }
+        
+        .footer-section p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: white;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: black;
+            padding-left: 5px;
+        }
+        
+        .newsletter form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .newsletter input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background: var(--color5);
+        }
+        
+        .newsletter button {
+            background: var(--color7);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        
+        .newsletter button:hover {
+            background: var(--color8);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            border-top: 1px solid var(--color3);
+            padding-top: 10px;
+            color: var(--color4);
+        }
+        
+        .footer-bottom a {
+            color: black;
+            text-decoration: none;
+        }
+        
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .social-icons {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="assets/images/favicon.png" alt="Simplon" onclick="window.location.href = 'index.html'"></div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-icon">
+                    <img src="assets/images/home.png" alt="">
+                    <span class="label">Home</span>
+                </a>
+                <a href="contactus.html" class="nav-icon">
+                    <img src="assets/images/contact.png" alt="">
+                    <span class="label">Contact</span>
+                </a>
+                <a href="aboutus.html" class="nav-icon">
+                    <img src="assets/images/aboutus.png" alt="">
+                    <span class="label">About</span>
+                </a>
+                <a href="gallery.html" class="nav-icon">
+                    <img src="assets/images/gallery.png" alt="">
+                    <span class="label">Gallery</span>
+                </a>
+                <a href="index.html" class="nav-icon">
+                    <img src="assets/images/cart.png" alt="">
+                    <span class="label">Cart</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="menu-container">
+        <div class="menu">
+            <a href="#" onclick="toggleDropdown('makeup')">MakeUp</a>
+            <a href="hairs.html">Hair</a>
+            <a href="skincare.html">SkinCare</a>
+            <a href="jewellery.html">Jewellery</a>
+            <a href="#" onclick="toggleDropdown('nail')">Nail</a>
+            <a href="weddingkits.html">Kits</a>
+        </div>
+    </div>
+
+    <div class="dropdown" id="makeup">
+        <div class="background"></div>
+        <button type="button" class="btn-close1" onclick="toggleDropdown('makeup')">✖</button>
+        <h2>Makeup</h2>
+        <div class="columns">
+            <div class="column">
+                <a href="complexion.html">Face</a>
+                <a href="eyemakeup.html">Eyes</a>
+                <a href="lips.html">Lips</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown" id="nail">
+        <button type="button" class="btn-close1" onclick="toggleDropdown('nail')">✖</button>
+        <h2>Nails</h2>
+        <div class="columns">
+            <div class="column">
+                <a href="nails.html">Nail Paints</a>
+                <a href="nailsart.html">Nail Art</a>
+            </div>
+        </div>
+    </div>
+    <!-- header -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 px-0">
+                <div class="header-container">
+                    <div class="page-top">
+                        <img src="assets/images/mainNailpolish.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 mx-auto text-center top-para">
+                <p>CHANEL nail polish protects, beautifies, and makes vibrant colors dazzle. Its ultra-durable formula gives it long wear. Each fine and ultra-shiny coat of CHANEL nail varnish offers a high-gloss look and perfectly even coverage. Following
+                    a thin coat of LA BASE, brush on one or two coats of LE VERNIS by CHANEL for flawless coverage.
+                </p>
+                <div class="space-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- filter-icons -->
+    <div class="container">
+        <div class="row filter-icons-container" id="eContainer"></div>
+    </div>
+
+    <!-- product container -->
+    <div class="container">
+        <div class="row justify-content-center" id="products-container"></div>
+    </div>
+
+    <!-- Add to Cart Sidebar -->
+    <div class="add-to-cart-container">
+        <div class="slidebar">
+            <div class="head">
+                <p>My Cart</p>
+            </div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3><strong>Total</strong></h3>
+                <div id="total">Rs.0.00</div>
+            </div>
+            <button onclick="checkout()" class="btn btn-checkout">Checkout</button>
+        </div>
+    </div>
+    <!-- Modal for Checkout -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background: linear-gradient(145deg, #E6A5C4 , white); color: #b24242; border: 1px solid rgb(161, 29, 73);">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkoutModalLabel">Order placed.</h5>
+                </div>
+                <div class="modal-body">
+                    Thank you for shopping at Simplon!
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section company">
+                    <h3>Company</h3>
+                    <p>212 Street<br> 45Hn Islamabad </p>
+                    <p><strong>Phone:</strong> +92 312243 666</p>
+                    <p><strong>Email:</strong> simploncos@info.com</p>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section services">
+                    <h3>Policy</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Exchange Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section newsletter">
+                    <h3>Our Newsletter</h3>
+                    <p>Subscribe to our newsletter and receive the latest updates.</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Company. All Rights Reserved</p>
+                <p>Designed by <a href="#">Simplon Beauty</a></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let eyeMakeup = [
+            ["nail polish", "assets/images/lip pancil.webp"],
+            ["manicure", "assets/images/manicure logo.webp"]
+
+        ]
+        let html = "";
+        for (let data of eyeMakeup) {
+            html += ` <div class=" logo-container col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+                    <img src="${data[1]}" alt="${data[0]}" class="card-img-top" ><br>
+                   <button class="btn filter-btn mt-2" onclick="filterProducts('${data[0]}')">${data[0]}</button>
+            </div>`
+        }
+        document.getElementById("eContainer").innerHTML = html;
+
+        // Makeup Products
+        let MakeupProducts = [{
+                name: "LE VERNIS ",
+                Image: "assets/images/sky green.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ROUGE COCO BAUME",
+                Image: "assets/images/light orange.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR ",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/mehroon.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR ",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/purple.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR ",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/yellowish green.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR ",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/baby pink.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR ",
+                price: "Rs 3,200 "
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/white.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/black.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR ",
+                price: "Rs 3,200"
+            }, {
+                name: "LE VERNIS",
+                Image: "assets/images/golden.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR ",
+                price: "Rs.  3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/red.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR ",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/light brown.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/light pink.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs 3,200"
+            }, {
+                name: "LE VERNIS",
+                Image: "assets/images/pinkish.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs 3,200"
+            }, {
+                name: "LE VERNIS",
+                Image: "assets/images/gray.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/blood red.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/navy blue.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/dark red.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/dark pink.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/light yellow.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/rose pink.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/pink to purple.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/light purple.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/ciment.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE VERNIS ",
+                Image: "assets/images/rose red.webp",
+                category: "nail polish",
+                details: "NAIL COLOUR",
+                price: "Rs. 3,200"
+            },
+
+            {
+                name: "LE DISSOLVANT DOUCEUR",
+                Image: "assets/images/nail remover.webp",
+                category: "manicure",
+                details: "GENTLE NAIL ENAMEL REMOVER",
+                price: "Rs. 2,500"
+            }, {
+                name: "L'HUILE CAMÉLIA",
+                Image: "assets/images/nail oil.webp",
+                category: "manicure",
+                details: "LACQUERED FINISH ENHANCED PROTECTION",
+                price: "Rs. 3,200"
+            }, {
+                name: "LE GEL COAT",
+                Image: "assets/images/base coat.webp",
+                category: "manicure",
+                details: "HYDRATING & FORTIFYING OIL",
+                price: "Rs. 3,200"
+            }, {
+                name: "LA BASE CAMÉLIA",
+                Image: "assets/images/manicure logo.webp",
+                category: "manicure",
+                details: "FORTIFYING, PROTECTING AND SMOOTHING BASE COAT",
+                price: "Rs. 3,200"
+            },
+        ]
+        let html1 = "";
+        MakeupProducts.forEach((product, index) => {
+            html1 += `
+            <div class="filter-cards col-lg-3 col-md-4 col-sm-12 mb-4 d-flex justify-content-center">
+             <div class="card shadow-sm" style="width: 100%; max-width: 280px;">
+               <img src="${product.Image}" class="card-img-top-product" alt="${product.name}">
+               <div class="card-body text-center">
+                <h5 class="card-title-product">${product.name}</h5>
+                <p class="card-text-product">${product.details}</p>
+                <p class="card-text-product">${product.price}</p>
+                    <button onclick="addToCart(${index})" class="btn-add-cart" >Add to cart</button>
+        </div>
+    </div>
+</div>`;
+        })
+        document.getElementById("products-container").innerHTML = html1
+
+        // Add to cart
+        let cart = [];
+
+        function addToCart(name, price, image) {
+            let existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name,
+                    price,
+                    Image: image,
+                    quantity: 1
+                });
+            }
+            updateCart();
+        }
+
+        function addToCart(index) {
+            let product = MakeupProducts[index]
+            cart.push(product);
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartItemsContainer = document.getElementById("cartItem");
+            let totalContainer = document.getElementById("total");
+            let cartContainer = document.querySelector(".add-to-cart-container")
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = "Your cart is empty";
+                totalContainer.innerHTML = "Rs. 0.00";
+                cartContainer.style.display = "none";
+                return;
+            }
+
+            cartContainer.style.display = "block";
+
+            let cartHTML = '<div class = "cart-item">';
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                let price = parseFloat(item.price.replace("Rs.", "").replace(",", ""));
+                totalPrice += price;
+                cartHTML += `
+            <div class="cart-item">
+                <img src="${item.Image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; border-radius: 5px;">
+                <p>${item.name} - ${item.price}</p>
+                <button onclick="removeFromCart(${index})" class="btn btn-remove btn-sm">Remove</button>
+            </div>`;
+            });
+
+            cartItemsContainer.innerHTML = cartHTML;
+            totalContainer.innerHTML = `Rs. ${totalPrice.toLocaleString()}`;
+        }
+
+        function increaseQuantity(index) {
+            cart[index].quantity += 1;
+            updateCart();
+        }
+
+        function decreaseQuantity(index) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            }
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+
+            function checkout() {
+
+            }
+            console.log("Checkout completed");
+
+            // modal
+            var checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+            checkoutModal.show();
+            document.getElementById('checkoutModal').addEventListener('click', function() {
+                window.location.reload();
+            });
+        }
+
+
+        // filter products
+        function filterProducts(category) {
+            let filteredProducts = MakeupProducts.filter(product => product.category && product.category.toLowerCase() === category.toLowerCase())
+
+            if (filteredProducts.length === 0) {
+                document.getElementById("products-container").innerHTML = '<p class="text-center">No product is found in this catagory.</p>'
+                return;
+            }
+            let filteredHTML = "";
+            filteredProducts.forEach((product, index) => {
+                filteredHTML += `<div class="filter-cards col-lg-3 col-md-4 col-sm-12 mb-4 d-flex ">
+             <div class="card shadow-sm" style="width: 100%; max-width: 280px;">
+               <img src="${product.Image}" class="card-img-top-product" alt="${product.name}">
+               <div class="card-body text-center">
+                <h5 class="card-title-product">${product.name}</h5>
+                <p class="card-text-product">${product.details}</p>
+                <p class="card-text-product">${product.price}</p>
+                    <button onclick="addToCart(${index})" class="btn-add-cart" >Add to card</button>
+        </div>
+    </div>
+</div>`
+
+            })
+            document.getElementById("products-container").innerHTML = filteredHTML;
+        }
+
+        // manu
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
+
+        function search() {
+            toggleSearch();
+        }
+
+        function toggleSearch() {
+            let searchBox = document.querySelector(".search-box");
+            searchBox.classList.toggle("active");
+        }
+
+        function toggleDropdown(category) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                if (dropdown.id === category) {
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    dropdown.style.display = 'none';
+                }
+            });
+        }
+
+        function closeDropdown(category) {
+            document.getElementById(category).style.display = 'none';
+        }
+    </script>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <img src="" alt="">
+</body>
+
+</html>

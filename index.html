@@ -2324,20 +2324,23 @@
         const featureproducts = document.getElementById("feautured");
         featureproducts.innerHTML = '';
 
-        featuredproducts.forEach((featured, index) => {
+        for (let i = 0; i < featuredproducts.length; i++) {
+            const featured = featuredproducts[i];
+
             const fcard = document.createElement('div');
             fcard.classList.add('feautured-products-card');
             fcard.innerHTML = `
-        <img src="${featured.img}" class="category-card img" alt="${featured.name}">
-        <div>
-            <h5 class="card-title">${featured.name}</h5>
-            <p class="card-text">${featured.description}</p>
-            <p class="card-text">${featured.price}</p>
-            <button class="fbtn-shop" onclick="addToCart(${index}, 'featured')">Add to Cart</button>
-        </div>
-    `;
+            <img src="${featured.img}" class="category-card img" alt="${featured.name}">
+            <div>
+                <h5 class="card-title">${featured.name}</h5>
+                <p class="card-text">${featured.description}</p>
+                <p class="card-text">${featured.price}</p>
+                <button class="fbtn-shop" onclick="addToCart(${i}, 'featured')">Add to Cart</button>
+            </div>
+        `;
+
             featureproducts.appendChild(fcard);
-        });
+        }
     }
     renderfeaturedproducts();
 

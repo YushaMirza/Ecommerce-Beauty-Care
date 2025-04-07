@@ -742,19 +742,24 @@
         }
         
         .btn-shop {
-            padding: 6px 12px;
             background-color: white;
-            color: var(--color1);
-            border-radius: 6px;
-            transition: color 0.3s;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
-            border: none;
-            margin-top: 13px;
+            color: black;
+            border: 1px solid whitesmoke;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            max-width: 150px;
+            text-align: center;
+            margin-top: auto;
         }
         
         .btn-shop:hover {
-            background-color: black;
-            color: #7091E6;
+            background-color: #f6cae0;
+            transform: scale(1.05);
         }
         
         @media (max-width: 992px) {
@@ -1072,19 +1077,24 @@
         }
         
         .fbtn-shop {
-            padding: 6px 12px;
             background-color: white;
-            color: var(--color1);
-            border-radius: 6px;
-            transition: color 0.3s;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
-            border: none;
-            margin-top: 13px;
+            color: black;
+            border: 1px solid whitesmoke;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            max-width: 150px;
+            text-align: center;
+            margin-top: auto;
         }
         
         .fbtn-shop:hover {
-            background-color: black;
-            color: #7091E6;
+            background-color: #f6cae0;
+            transform: scale(1.05);
         }
         
         .feautured-products-card img {
@@ -1824,7 +1834,7 @@
         </div>
     </div>
     <header>
-        <div class="logo"><img src="assets/favicon.png" alt="Simplon" onclick="window.location.href = 'index.html'"></div>
+        <div class="logo"><img src="assets/images/favicon.png" alt="Simplon" onclick="window.location.href = 'index.html'"></div>
         <nav>
             <div class="hamburger" onclick="toggleMenu()">
                 <div></div>
@@ -1833,23 +1843,23 @@
             </div>
             <div class="nav-links">
                 <a href="index.html" class="nav-icon">
-                    <img src="assets/home.png" alt="">
+                    <img src="assets/images/home.png" alt="">
                     <span class="label">Home</span>
                 </a>
                 <a href="contactus.html" class="nav-icon">
-                    <img src="assets/contact.png" alt="">
+                    <img src="assets/images/contact.png" alt="">
                     <span class="label">Contact</span>
                 </a>
                 <a href="aboutus.html" class="nav-icon">
-                    <img src="assets/aboutus.png" alt="">
+                    <img src="assets/images/aboutus.png" alt="">
                     <span class="label">About</span>
                 </a>
                 <a href="gallery.html" class="nav-icon">
-                    <img src="assets/gallery.png" alt="">
+                    <img src="assets/images/gallery.png" alt="">
                     <span class="label">Gallery</span>
                 </a>
                 <a href="index.html" class="nav-icon">
-                    <img src="assets/cart.png" alt="">
+                    <img src="assets/images/cart.png" alt="">
                     <span class="label">Cart</span>
                 </a>
             </div>
@@ -1859,11 +1869,11 @@
     <div class="menu-container">
         <div class="menu">
             <a href="#" onclick="toggleDropdown('makeup')">MakeUp</a>
-            <a href="index.html">Hair</a>
-            <a href="index.html">SkinCare</a>
-            <a href="index.html">Jewellery</a>
+            <a href="hairs.html">Hair</a>
+            <a href="skincare.html">SkinCare</a>
+            <a href="jewellery.html">Jewellery</a>
             <a href="#" onclick="toggleDropdown('nail')">Nail</a>
-            <a href="index.html">Kits</a>
+            <a href="weddingkits.html">Kits</a>
         </div>
     </div>
 
@@ -1873,9 +1883,9 @@
         <h2>Makeup</h2>
         <div class="columns">
             <div class="column">
-                <a href="">Face</a>
-                <a href="">Eyes</a>
-                <a href="">Lips</a>
+                <a href="complexion.html">Face</a>
+                <a href="eyemakeup.html">Eyes</a>
+                <a href="lips.html">Lips</a>
             </div>
         </div>
     </div>
@@ -1885,15 +1895,15 @@
         <h2>Nails</h2>
         <div class="columns">
             <div class="column">
-                <a href="index.html">Nail Paints</a>
-                <a href="index.html">Nail Art</a>
+                <a href="nails.html">Nail Paints</a>
+                <a href="nailsart.html">Nail Art</a>
             </div>
         </div>
     </div>
 
     <div class="banner-wrapper">
         <div class="banner">
-            <img src="assets/hero.jpg" alt="Hero" class="img-fluid">
+            <img src="assets/images/hero.jpg" alt="Hero" class="img-fluid">
         </div>
     </div>
     <h1>Best Selling Products</h1>
@@ -1903,7 +1913,7 @@
     </div>
     <div class="banner-wrapper">
         <div class="banner">
-            <img src="assets/dicount-banner.png" alt="Discount Banner" class="img-fluid">
+            <img src="assets/images/dicount-banner.png" alt="Discount Banner" class="img-fluid">
         </div>
     </div>
 
@@ -1913,7 +1923,7 @@
     </div>
     <div class="Discount Banner-wrapper">
         <div class="banner1">
-            <img src="assets/coming-soon-banner.png" alt="Coming Soon Banner" class="img-fluid">
+            <img src="assets/images/coming-soon-banner.png" alt="Coming Soon Banner" class="img-fluid">
         </div>
     </div>
 
@@ -1929,27 +1939,27 @@
                         pure, organic, and compassionate.</h4>
                     <div class="values-grid">
                         <div class="value-item">
-                            <img src="assets/values1.avif" alt="Cruelty Free">
+                            <img src="assets/images/values1.avif" alt="Cruelty Free">
                             <p style="color: #fec99b;">CRUELTY FREE</p>
                         </div>
                         <div class="value-item">
-                            <img src="assets/values2.avif" alt="Paraben Free">
+                            <img src="assets/images/values2.avif" alt="Paraben Free">
                             <p style="color: #a1e4bb;">PARABEN AND SULPHATE FREE</p>
                         </div>
                         <div class="value-item">
-                            <img src="assets/values3.avif" alt="Non Toxic">
+                            <img src="assets/images/values3.avif" alt="Non Toxic">
                             <p style="color: #d5bed8;">NON TOXIC</p>
                         </div>
                         <div class="value-item">
-                            <img src="assets/values4.avif" alt="100% Vegan">
+                            <img src="assets/images/values4.avif" alt="100% Vegan">
                             <p style="color: #8eb8ea;">100% VEGAN</p>
                         </div>
                         <div class="value-item">
-                            <img src="assets/values5.avif" alt="Daily Use">
+                            <img src="assets/images/values5.avif" alt="Daily Use">
                             <p style="color: #ff6900;">DAILY USE</p>
                         </div>
                         <div class="value-item">
-                            <img src="assets/values6.avif" alt="Clean & Kind">
+                            <img src="assets/images/values6.avif" alt="Clean & Kind">
                             <p style="color: #ffa4b3;">CLEAN & KIND</p>
                         </div>
                     </div>
@@ -1958,7 +1968,7 @@
             <h1>User Reviews</h1>
             <div class="user-reviews-container">
                 <div class="user-review">
-                    <img src="assets/user-review1.webp" alt="user review 1" class="user-review-img img-fluid">
+                    <img src="assets/images/user-review1.webp" alt="user review 1" class="user-review-img img-fluid">
                     <div class="review-content">
                         <p>Anoosha H</p>
                         <div class="review-stars">★★★★</div>
@@ -1966,7 +1976,7 @@
                     </div>
                 </div>
                 <div class="user-review">
-                    <img src="assets/user-review2.jpg" alt="user review 2" class="user-review-img img-fluid">
+                    <img src="assets/images/user-review2.jpg" alt="user review 2" class="user-review-img img-fluid">
                     <div class="review-content">
                         <p>Suhana</p>
                         <div class="review-stars">★★★★★</div>
@@ -1974,7 +1984,7 @@
                     </div>
                 </div>
                 <div class="user-review">
-                    <img src="assets/user-review3.webp" alt="user review 2" class="user-review-img">
+                    <img src="assets/images/user-review3.webp" alt="user review 2" class="user-review-img">
                     <div class="review-content">
                         <p>Maria</p>
                         <div class="review-stars">★★★★★</div>
@@ -2009,7 +2019,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-12 bottom-column">
-                            <img src="assets/theartofdetail.webp" alt="Left Image">
+                            <img src="assets/images/theartofdetail.webp" alt="Left Image">
                             <div class="bottom-text-box">
                                 <div class="bottom-heading">THE ART OF DETAIL</div>
                                 <div class="bottom-caption">The devil's in the details, every stitch, every shade, every contour.</div>
@@ -2017,7 +2027,7 @@
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-12 bottom-column">
-                            <img src="assets/tryon.webp" alt="Right Image">
+                            <img src="assets/images/tryon.webp" alt="Right Image">
                             <div class="bottom-text-box">
                                 <div class="bottom-heading">SIMPLON VIRTUAL TRY ON</div>
                                 <div class="bottom-caption">Try all of our products virtually to shade-match before buying.</div>
@@ -2027,8 +2037,9 @@
                 </div>
             </div>
             <div class="full-image-container">
-                <img src="assets/Roboto.png" alt="Full Size Image" class="img-fluid">
+                <img src="assets/images/Roboto.png" alt="Full Size Image" class="img-fluid">
                 <button class="full-image-btn">Find stores near you</button>
+
             </div>
             <footer class="footer">
                 <div class="container">
@@ -2143,29 +2154,41 @@
     }
 
     const categories = [{
-        name: "MakeUp",
-        img: "assets/makeupcat.avif",
-        link: "index.html"
+        name: "Face",
+        img: "assets/images/face.avif",
+        link: "complexion.html"
+    }, {
+        name: "Eyes",
+        img: "assets/images/facecat.avif",
+        link: "eyemakeup.html"
+    }, {
+        name: "Lips",
+        img: "assets/images/makeupcat.avif",
+        link: "lips.html"
     }, {
         name: "Hair",
-        img: "assets/haircat.avif",
-        link: "Gallery1.avif"
+        img: "assets/images/haircat.avif",
+        link: "hairs.html"
     }, {
         name: "SkinCare",
-        img: "assets/skincarecat.avif",
-        link: "index.html"
+        img: "assets/images/skincarecat.avif",
+        link: "skincare.html"
     }, {
         name: "Jewellery",
-        img: "assets/jewellerycat.avif",
-        link: "index.html"
+        img: "assets/images/jewellerycat.avif",
+        link: "jewellery.html"
     }, {
         name: "Nails",
-        img: "assets/nailscat.webp",
-        link: "index.html"
+        img: "assets/images/nailscat.webp",
+        link: "nails.html"
+    }, {
+        name: "Nail Art",
+        img: "assets/images/nailart.avif",
+        link: "nailsart.html"
     }, {
         name: "Wedding Kits",
-        img: "assets/weddingkits.png",
-        link: "index.html"
+        img: "assets/images/weddingkits.png",
+        link: "weddingkits.html"
     }]
 
     function rendercategories() {
@@ -2244,17 +2267,17 @@
     let cart = [];
 
     let carddata = [{
-        img: "assets/BestSellingProduct1.avif",
+        img: "assets/images/BestSellingProduct1.avif",
         name: "ROUGE ALLURE",
         price: "Rs. 4,750",
         text: "LUMINOUS INTENSE LIP COLOUR (PIRATE)"
     }, {
-        img: "assets/BestSellingProduct2.avif",
+        img: "assets/images/BestSellingProduct2.avif",
         name: "JARDIN IMAGINAIRE",
         price: "Rs. 5,850",
         text: "BLUSH AND HIGHLIGHTER DUO (GOLD & PEACH)"
     }, {
-        img: "assets/BestSellingProduct3.avif",
+        img: "assets/images/BestSellingProduct3.avif",
         name: "STYLO YEUX WATERPROOF",
         price: "Rs. 3,000",
         text: "LONG-LASTING EYELINER (BLACK)"
@@ -2272,7 +2295,7 @@
             <h5 class="card-title">${card.name}</h5>
             <p class="card-text">${card.text}</p>
              <p class="card-text">${card.price}</p>
-            <button class="btn-shop" onclick="addToCart(${i}, 'best')">Add to Bag</button>
+            <button class="btn-shop" onclick="addToCart(${i}, 'best')">Add to Cart</button>
         </div>
     `;
             card_container.appendChild(card_element);
@@ -2282,17 +2305,17 @@
 
     const featuredproducts = [{
         name: "ULTRA LE TEINT FLUIDE",
-        img: "assets/feauturedproducts1.avif",
+        img: "assets/images/feauturedproducts1.avif",
         price: "Rs. 5,800",
         description: "FLAWLESS FINISH FOUNDATION (B110)"
     }, {
         name: "LE CRAYON KHÔL",
-        img: "assets/feauturedproducts2.avif",
+        img: "assets/images/feauturedproducts2.avif",
         price: "Rs. 3,050",
         description: "CRAYON KHÔL - WATERPROOF (61 - NOIR)"
     }, {
         name: "ROUGE COCO BAUME – SHINE",
-        img: "assets/feauturedproducts3.avif",
+        img: "assets/images/feauturedproducts3.avif",
         price: "Rs. 4,750",
         description: "TINTED LIP BALM (BLUSHING PINK)"
     }]
@@ -2310,7 +2333,7 @@
             <h5 class="card-title">${featured.name}</h5>
             <p class="card-text">${featured.description}</p>
             <p class="card-text">${featured.price}</p>
-            <button class="fbtn-shop" onclick="addToCart(${index}, 'featured')">Add to Bag</button>
+            <button class="fbtn-shop" onclick="addToCart(${index}, 'featured')">Add to Cart</button>
         </div>
     `;
             featureproducts.appendChild(fcard);

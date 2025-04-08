@@ -7,6 +7,8 @@
     <title>Simplon Beauty</title>
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="icon" href="assets/images/favicon.png" type="image/jpg">
+    <script>
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
@@ -1599,8 +1601,18 @@
             border-radius: 8px;
         }
         
-        .bottom-column img:hover {
+        .btn.mt-2.px-4.rounded-pill {
+            transition: all 0.4s;
+            background-color: var(--color8);
+            color: white;
+            font-weight: 500;
+            border: none;
+        }
+        
+        .btn.mt-2.px-4.rounded-pill:hover {
             transform: scale(1.02);
+            background-color: #d27b87 !important;
+            color: white !important;
         }
         
         @media (max-width: 992px) {
@@ -2013,7 +2025,10 @@
                 </div>
             </div>
             <h1>The Simplon Beauty Experience</h1>
-            <h4>At Simplon, we believe that beauty is as unique as you are. That's why we celebrate individuality with <span style="color: var(--color7);">an exclusive experience, tailored just for you.</span></h4>
+            <h4>
+                At Simplon, we believe that beauty is as unique as you are. That's why we celebrate individuality with
+                <span style="color: var(--color7);">an exclusive experience, tailored just for you.</span>
+            </h4>
 
             <div class="bottom">
                 <div class="container">
@@ -2022,15 +2037,28 @@
                             <img src="assets/images/theartofdetail.webp" alt="Left Image">
                             <div class="bottom-text-box">
                                 <div class="bottom-heading">THE ART OF DETAIL</div>
-                                <div class="bottom-caption">The devil's in the details, every stitch, every shade, every contour.</div>
+                                <div class="bottom-caption">
+                                    The devil's in the details, every stitch, every shade, every contour.
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn mt-2 px-4 rounded-pill">
+                                        Learn More
+                                    </button>
+                                </div>
                             </div>
                         </div>
-
                         <div class="col-lg-6 col-md-6 col-12 bottom-column">
                             <img src="assets/images/tryon.webp" alt="Right Image">
                             <div class="bottom-text-box">
                                 <div class="bottom-heading">SIMPLON VIRTUAL TRY ON</div>
-                                <div class="bottom-caption">Try all of our products virtually to shade-match before buying.</div>
+                                <div class="bottom-caption">
+                                    Try all of our products virtually to shade-match before buying.
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn mt-2 px-4 rounded-pill">
+                                        Learn More
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2038,7 +2066,7 @@
             </div>
             <div class="full-image-container">
                 <img src="assets/images/Roboto.png" alt="Full Size Image" class="img-fluid">
-                <button class="full-image-btn">Find stores near you</button>
+                <button class="full-image-btn" onclick="window.location.href='https://www.google.com/maps?q=Karachi';">Find stores near you</button>
 
             </div>
             <footer class="footer">
@@ -2118,7 +2146,7 @@
 </body>
 
 </html>
-<script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var md = new bootstrap.Modal(document.getElementById("staticBackdrop"));
@@ -2128,6 +2156,7 @@
     function toggleMenu() {
         document.querySelector(".nav-links").classList.toggle("show");
     }
+
     function toggleDropdown(category) {
         const dropdowns = document.querySelectorAll('.dropdown');
         dropdowns.forEach(dropdown => {
@@ -2389,3 +2418,4 @@
         updateCart();
     }
 </script>
+<script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>

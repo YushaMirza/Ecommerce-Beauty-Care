@@ -1059,6 +1059,19 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background: linear-gradient(145deg, #E6A5C4 , white); color: #b24242; border: 1px solid rgb(161, 29, 73);">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkoutModalLabel">Message Sent!</h5>
+                </div>
+                <div class="modal-body">
+                    Thank you for reaching out. We appreciate your response!
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -1112,7 +1125,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-
+<script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
@@ -1176,10 +1189,14 @@
         }
 
         if (!messagePattern.test(message)) {
-            alert("Message Sent ✔️")
-                // return false;
-        }
-    });
+    alert("Message must be at least 10 characters and valid!");
+    return false;
+} else {
+    const myModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+    myModal.show();
+}
+
+   });
 
 
     //     // Clear form (optional);

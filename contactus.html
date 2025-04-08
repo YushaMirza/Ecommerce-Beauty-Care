@@ -998,10 +998,10 @@
 
                         <div class="row100">
                             <div class="inputbox">
-                                <span> Message </span>
-                                <textarea id="message" placeholder="Write Your Message here..." pattern="^[a-zA-Z0-9\s.,!?()'-]{5,500}$" required> </textarea>
+                                <span>Message</span>
+                                <textarea id="message" placeholder="Write your message here..." pattern="[A-Za-z0-9.,!? ]{10,}" required></textarea>
                             </div>
-                        </div>
+                        </div>                        
 
                         <div class="row100">
                             <div class="inputbox">
@@ -1121,16 +1121,6 @@
     function toggleMenu() {
         document.querySelector(".nav-links").classList.toggle("show");
     }
-
-    function search() {
-        toggleSearch();
-    }
-
-    function toggleSearch() {
-        let searchBox = document.querySelector(".search-box");
-        searchBox.classList.toggle("active");
-    }
-
     function toggleDropdown(category) {
         const dropdowns = document.querySelectorAll('.dropdown');
         dropdowns.forEach(dropdown => {
@@ -1162,7 +1152,7 @@
         const namePattern = /^[A-Za-z]{2,30}$/;
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const contactPattern = /^03[0-9]{9}$/;
-        const messagePattern = /^[A-Za-z]{20}$/;
+        const messagePattern = /[A-Za-z0-9.,!? ]{10,}/;
 
 
         if (!namePattern.test(name)) {

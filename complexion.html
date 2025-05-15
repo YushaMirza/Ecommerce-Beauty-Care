@@ -825,7 +825,7 @@
             <div class="col-12 px-0">
                 <div class="header-container">
                     <div class="page-top">
-                        <img src="assets/images/mainFace.jpeg" alt="">
+                        <img src="assets/images/mainFace.jpeg" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -933,22 +933,23 @@
 
     <script>
         function toggleMenu() {
-        document.querySelector(".nav-links").classList.toggle("show");
-    }
-    function toggleDropdown(category) {
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach(dropdown => {
-            if (dropdown.id === category) {
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-            } else {
-                dropdown.style.display = 'none';
-            }
-        });
-    }
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
 
-    function closeDropdown(category) {
-        document.getElementById(category).style.display = 'none';
-    }
+        function toggleDropdown(category) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                if (dropdown.id === category) {
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    dropdown.style.display = 'none';
+                }
+            });
+        }
+
+        function closeDropdown(category) {
+            document.getElementById(category).style.display = 'none';
+        }
         let eyeMakeup = [
             ["Foundation", "assets/images/foundation logo.webp"],
             ["Blush", "assets/images/blush logo.webp"],

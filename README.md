@@ -2,7 +2,7 @@
 
 A fully responsive frontend e-commerce website for a fictional beauty and skincare brand. Includes product listings, category sections, cart interface (UI only), and user-friendly navigation — built to simulate a real online shopping experience.
 
-🔗 **Live Site:** [https://thelaureates.netlify.app](https://simplonbeauties.netlify.app)
+🔗 **Live Site:** [https://simplonbeauties.netlify.app](https://simplonbeauties.netlify.app)
 
 ## 🛠️ Technologies Used
 

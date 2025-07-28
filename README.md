@@ -31,6 +31,7 @@ A fully responsive frontend e-commerce website for a fictional beauty and skinca
 **Yousha Mirza**  
 📧 yousha.mirza328@gmail.com  
 🔗 [LinkedIn](https://linkedin.com/in/yousha-mirza-5886a5281)
+🔗 [Portfolio](https://yushamirza.zya.me)
 
 ---
 
